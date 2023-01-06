@@ -24,40 +24,24 @@ function App() {
       date: new Date(2021, 5, 12),
       location:"store"
     },
+    
   ];
+
+  
+
   return (
     <div>
       <h2>Let's get started!</h2>
+      {/* loope through the expensex array of objects using map method inside the {curly braces} and change the {} after arrow to () as because of this return takes palce important note.and then created the custom html with the required attributes */}
+      {expenses.map((e)=>(
+         
       <ExpenseItem
-        title={expenses[0].title}
-        amount={expenses[0].amount}
-        date={expenses[0].date}
-        location={expenses[0].location}
+        title={e.title}
+        amount={e.amount}
+        date={e.date}
+        location={e.location}
       ></ExpenseItem>
-
-<ExpenseItem
-        title={expenses[1].title}
-        amount={expenses[1].amount}
-        date={expenses[1].date}
-        location={expenses[1].location}
-
-      ></ExpenseItem>
-
-<ExpenseItem
-        title={expenses[2].title}
-        amount={expenses[2].amount}
-        date={expenses[2].date}
-        location={expenses[2].location}
-
-      ></ExpenseItem>
-
-<ExpenseItem
-        title={expenses[3].title}
-        amount={expenses[3].amount}
-        date={expenses[3].date}
-        location={expenses[3].location}
-
-      ></ExpenseItem>
+      ))}
     </div>
   );
 }
