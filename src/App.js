@@ -1,25 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
-
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
+    return (
+      <div>
+        <h2>Let's get started!</h2>
+        <p>this is also visible</p>
+      </div>
+    );
+  }
+  
+  export default App;
+  
+  //we can use an html element in the js file because of the feature called jsx.
+  // abd because of the all the transformation that is being handled by the react behind the scenes before giving it to the browser
