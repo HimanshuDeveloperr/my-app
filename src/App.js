@@ -39,7 +39,27 @@ function App() {
   return (
     <div>
       <h2>Let's get started!</h2>
+      {/* loope through the expensex array of objects using map method inside the {curly braces} and change the {} after arrow to () as because of this return takes palce important note.and then created the custom html with the required attributes */}
+      {/* <Card className="expenses">
 
+      {expenses.map((e) => (
+
+      
+        <ExpenseItem
+          title={e.title}
+          amount={e.amount}
+          date={e.date}
+          location={e.location}
+        ></ExpenseItem>
+
+     
+
+      
+          
+      
+      
+      ))}
+      </Card> */}
 
 <Expenses items={expenses} />
 
