@@ -1,3 +1,5 @@
+import React from "react";
+
 import ExpenseDetails from "./ExpenseDetails";
 
 import ExpenseDate from "./ExpenseDate";
