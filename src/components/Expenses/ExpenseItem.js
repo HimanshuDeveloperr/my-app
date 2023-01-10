@@ -12,9 +12,11 @@ function ExpenseItem(props) {
 
 
     const ele = document.getElementById(props.id)
-    // while(ele.length > 0){
+    
+      
+      console.log(ele.parentNode)
       ele.parentNode.removeChild(ele)
-    // }
+    
    
 
     
