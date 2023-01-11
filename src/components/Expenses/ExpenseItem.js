@@ -7,10 +7,7 @@ import ExpenseDate from "./ExpenseDate";
 import "./ExpenseItem.css";
 import Card from "../UI/Card";
 function ExpenseItem(props) {
-  const [amount, addedAmount] = useState(props.amount);
-  const add = () => {
-    addedAmount("100");
-  };
+  
   const [title, setTitle] = useState(props.title);
 
   const clickHandlerr = () => {
@@ -22,9 +19,9 @@ function ExpenseItem(props) {
       <ExpenseDate date={props.date}></ExpenseDate>
       <h2>{title}</h2>
 
-      <ExpenseDetails amount={amount} />
+      <ExpenseDetails amount={props.amount} />
 
-      <button onClick={add}>+</button>
+      
 
       <button onClick={clickHandlerr}>change title</button>
     </Card>
