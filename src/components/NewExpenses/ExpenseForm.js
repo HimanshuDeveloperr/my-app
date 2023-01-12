@@ -2,6 +2,27 @@ import React, { useState } from "react";
 import "./EXpenseForm.css";
 
 function ExpenseForm() {
+
+  const submitHandler=(e)=>{
+    e.preventDefault()
+    const title=e.target.name.value;
+    
+    const amount=e.target.amount.value
+
+   const details={
+    title,
+    amount
+   }
+   Show(details)
+  }
+  const Show=(details)=>{
+    const ParentNode=document.querySelector("#store")
+    const childhtml=`<li>${details.title}  ${details.amount}</li>`
+
+    if(childhtml){
+    ParentNode.innerHTML=ParentNode.innerHTML+childhtml;
+    }
+  }
   const [enteredTitle, setenteredTitle] = useState("");
 
   const [enteredAmount, setenteredAmount] = useState("");
@@ -18,11 +39,11 @@ function ExpenseForm() {
   }
 
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input type="text" onChange={titleHandler} />
+          <input type="text" onChange={titleHandler} name="name" />
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
@@ -31,6 +52,7 @@ function ExpenseForm() {
             min="0.01"
             step="0.01"
             onChange={amountHandler}
+            name="amount"
           />
         </div>
         <div className="new-expense__control">
@@ -44,9 +66,13 @@ function ExpenseForm() {
         </div>
       </div>
       <div className="new-expense__actions">
-        <button type="submit">Add Expense</button>
+        <button type="submit" >Add Expense</button>
+      </div>
+      <div>
+      <ul id="store"></ul>
       </div>
     </form>
+    
   );
 }
 
