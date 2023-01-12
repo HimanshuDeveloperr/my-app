@@ -28,10 +28,19 @@ function ExpenseForm() {
     
         //setenteredAmount(event.target.value)
 
-        setUserinput({
-    ...userInput,
-    enteredAmount:event.target.value
-   })
+  //       setUserinput({
+  //   ...userInput,
+  //   enteredAmount:event.target.value
+  //  })
+
+  setUserinput((prevstatesnapshot)=>{
+    return{
+      ...prevstatesnapshot,
+      enteredTitle:event.target.value
+      
+      //best way to use if we are dealing with previous state snapshot rather using it without a function inside a setuserinput call. here react will automatically executes the arroe function and give us the latest previous state snap that is needed to be object here which is our object inside the usestate.and then we just simply needs to return the updatation with the updated title
+    }
+  })
     
       }
       function dateHandler(event){
