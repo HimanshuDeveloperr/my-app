@@ -3,26 +3,6 @@ import "./EXpenseForm.css";
 
 function ExpenseForm() {
 
-  const submitHandler=(e)=>{
-    e.preventDefault()
-    const title=e.target.name.value;
-    
-    const amount=e.target.amount.value
-
-   const details={
-    title,
-    amount
-   }
-   Show(details)
-  }
-  const Show=(details)=>{
-    const ParentNode=document.querySelector("#store")
-    const childhtml=`<li>${details.title}  ${details.amount}</li>`
-
-    if(childhtml){
-    ParentNode.innerHTML=ParentNode.innerHTML+childhtml;
-    }
-  }
   const [enteredTitle, setenteredTitle] = useState("");
 
   const [enteredAmount, setenteredAmount] = useState("");
@@ -36,6 +16,17 @@ function ExpenseForm() {
   }
   function dateHandler(event) {
     setenteredDate(event.target.value);
+  }
+
+  const submitHandler=(event)=>{
+      event.preventDefault();
+
+      const expenseData={
+        title:enteredTitle,
+        amount:enteredAmount,
+        date:new Date(enteredDate)
+      }
+      console.log(expenseData)
   }
 
   return (
@@ -60,16 +51,13 @@ function ExpenseForm() {
           <input
             type="date"
             min="2019-01-01"
-            max="2022-12-31"
+            max="2023-12-31"
             onChange={dateHandler}
           />
         </div>
       </div>
       <div className="new-expense__actions">
         <button type="submit" >Add Expense</button>
-      </div>
-      <div>
-      <ul id="store"></ul>
       </div>
     </form>
     
