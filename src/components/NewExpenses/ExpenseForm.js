@@ -3,24 +3,44 @@ import "./EXpenseForm.css"
 
 function ExpenseForm() {
 
-  const[enteredTitle,setenteredTitle]=useState('');
-  //as the value will be alkways in a string format whether it is a no or anything.
-  const[enteredAmount,setenteredAmount]=useState('')
-  const[enteredDate,setenteredDate]=useState('')
+  // const[enteredTitle,setenteredTitle]=useState('');
+  
+  // const[enteredAmount,setenteredAmount]=useState('')
+  // const[enteredDate,setenteredDate]=useState('')
+
+  const[userInput,setUserinput]=useState({
+    enteredTitle:'',
+    enteredAmount:'',
+    enteredDate:''
+  })
+  
 
   function titleHandler(event){
-console.log(event)//object given to us bydefault when the event takes place
-    setenteredTitle(event.target.value)
+
+   // setenteredTitle(event.target.value)
+   setUserinput({
+    ...userInput,
+    enteredTitle:event.target.value
+   })
 
   }
   function amountHandler(event){
     
-        setenteredAmount(event.target.value)
+        //setenteredAmount(event.target.value)
+
+        setUserinput({
+    ...userInput,
+    enteredAmount:event.target.value
+   })
     
       }
       function dateHandler(event){
         
-            setenteredDate(event.target.value)
+           // setenteredDate(event.target.value)
+           setUserinput({
+    ...userInput,
+    enteredDate:event.target.value
+   })
         
           }
 
