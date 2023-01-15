@@ -1,6 +1,4 @@
-//for rendering the date of the expense.
 
-//components in react are just regural function returning the jsx code.
 import React from "react";
 
 import "./ExpenseDate.css";
