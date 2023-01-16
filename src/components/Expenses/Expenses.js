@@ -20,9 +20,9 @@ const Expenses = (props) => {
         selected={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
-      {filteredExpnses.length === 0 ? (
-        <p>No Expense Is Found</p>
-      ) : (
+      {filteredExpnses.length === 0 && <p>No Expense Is Found</p>}
+      {/* after the and operator anything that we give will be renderted and return if the before and statement is true */}
+      {filteredExpnses.length > 0 &&
         filteredExpnses.map((expenses) => (
           <ExpenseItem
             key={expenses.id}
@@ -30,9 +30,7 @@ const Expenses = (props) => {
             amount={expenses.amount}
             date={expenses.date}
           />
-        ))
-      )}
-     
+        ))}
     </Card>
   );
 };
